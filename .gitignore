@@ -1,0 +1,13 @@
+﻿# Eclipse / IDE
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# Maven / build
+target/
+build/
+
+# Web artifacts
+*.war
