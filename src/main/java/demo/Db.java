@@ -5,9 +5,8 @@ public final class Db {
     try { Class.forName("com.mysql.cj.jdbc.Driver"); } catch (Exception ignore) {}
   }
 
-  // ✅ Level 3: Laptop → Server EC2 (Public IP, No SSL)
   private static final String URL =
-      "jdbc:mysql://18.189.21.239:3306/SE"
+      "jdbc:mysql://172.31.26.28:3306/SE"
     + "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&characterEncoding=UTF-8";
   private static final String USER = "SE";
   private static final String PASS = "SE2020";
@@ -16,7 +15,6 @@ public final class Db {
     return java.sql.DriverManager.getConnection(URL, USER, PASS);
   }
 
-  // keep compatibility if other code calls Db.get()
   public static java.sql.Connection get() throws java.sql.SQLException {
     return getConnection();
   }
